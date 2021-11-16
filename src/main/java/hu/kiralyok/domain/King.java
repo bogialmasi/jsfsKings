@@ -57,4 +57,6 @@ public class King {
         this.kingdom = kingdom;
     }
 
+    public void setId(long id) {
+    }
 }

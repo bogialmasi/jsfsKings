@@ -1,5 +1,7 @@
 package hu.kiralyok.domain;
 
+import java.util.List;
+
 public class Kingdom {
     private int area;
     private int population;
@@ -29,5 +31,8 @@ public class Kingdom {
                 "area=" + area +
                 ", population=" + population +
                 '}';
+    }
+
+    public List<King> getKings() {
     }
 }

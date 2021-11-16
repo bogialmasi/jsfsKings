@@ -57,9 +57,24 @@ public class KingdomService {
         return true;
     }
 
-    public void deleteKingdom(int id) {
+    public void deleteKingdom(long id) {
+        Optional<Kingdom> category = kingdomRepository.findById(id);
+        if (category.isPresent()) {
+            kingdomRepository.deleteById(id);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 
-    public void updateKingdom(int id, int area, int population) {
+    public void updateKingdom(long id, int area, int population) {
+        Optional<Kingdom> optionalKingdom = kingdomRepository.findById(id);
+        if (optionalKingdom.isPresent()) {
+            Kingdom kingdom = optionalKingdom.get();
+            kingdom.setArea(area);
+            kingdom.setPopulation(population);
+            kingdomRepository.save(kingdom);
+        } else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
     }
 }

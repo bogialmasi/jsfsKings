@@ -7,7 +7,7 @@ public class King {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
-    private int birthDate;
+    private int birthdate;
     private int death;
     @ManyToOne
     private Kingdom kingdom;
@@ -19,7 +19,7 @@ public class King {
     public String toString() {
         return "Kings{" +
                 "name='" + name + '\'' +
-                ", birthDate=" + birthDate +
+                ", birthDate=" + birthdate +
                 ", death=" + death +
                 ", country=" + kingdom +
                 '}';
@@ -33,12 +33,12 @@ public class King {
         this.name = name;
     }
 
-    public int getBirthDate() {
-        return birthDate;
+    public int getBirthdate() {
+        return birthdate;
     }
 
-    public void setBirthDate(int birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthdate(int birthdate) {
+        this.birthdate = birthdate;
     }
 
     public int getDeath() {

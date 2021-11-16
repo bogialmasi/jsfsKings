@@ -2,10 +2,13 @@ package hu.kiralyok.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Kingdom {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String name;
     private int area;
     private int population;

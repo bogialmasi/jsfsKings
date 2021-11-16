@@ -2,9 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Kings RestAPI</title>
+    <title>Kings + Kingdoms</title>
 </head>
 <body>
+<h2>Kings WebService</h2>
+<table>
+    <tr>
+        <th>Metódus</th>
+        <th>URL</th>
+        <th>Szolgáltatás</th>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/kingdoms">/kingdoms</a></td>
+        <td>Királyságok listája</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/kingdoms/1">/kingdoms/{id}</a></td>
+        <td>Egy királyság</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/kingdom/1/kings">/kingdoms/{id}/kings</a></td>
+        <td>Egy Királyság királyai</td>
+    </tr>
+        <td>POST</td>
+        <td>/kingdoms</td>
+        <td>Királyság létrehozása</td>
+    </tr>
+        <td>DELETE</td>
+        <td>/kingdoms/{id}</td>
+        <td>Királyság törlése</td>
+    </tr>
+    </tr>
+        <td>PATCH</td>
+        <td>/kingdoms/{id}/{area}/{population}</td>
+        <td>Királyság módosítása</td>
+    </tr>
 
+    <tr>
+        <td>GET</td>
+        <td><a href="/kings/">/kings</a></td>
+        <td>Minden Király</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td><a href="/kings/1">/kings/{id}</a></td>
+        <td>Egy király</td>
+    </tr>
+    </tr>
+        <td>POST</td>
+        <td>/kings</td>
+        <td>Király létrehozása</td>
+    </tr>
+        <td>DELETE</td>
+        <td>/kings/{id}</td>
+        <td>Király törlése</td>
+    </tr>
+    </tr>
+        <td>PUT</td>
+        <td>/kings/{id}/</td>
+        <td>Király módosítása (minden adat)</td>
+    </tr>
+    </tr>
+        <td>PATCH</td>
+        <td>/kings/{id}/{death}</td>
+        <td>Király módosítása (csak halál)</td>
+    </tr>
+</table>
 </body>
 </html>

@@ -38,6 +38,14 @@ public class KingController {
     /*---------------------------------------------------------------------------*/
 
 
+    @PutMapping("/kings/{id}")
+    public King replaceKing(@PathVariable("id") long id, @RequestBody King king){
+        return service.replaceKing(id, king);
+    }
+
+    /*---------------------------------------------------------------------------*/
+
+
     @DeleteMapping("/kings/{id}")
     public void killKing(@PathVariable("id") int id) {
         service.killKing(id);

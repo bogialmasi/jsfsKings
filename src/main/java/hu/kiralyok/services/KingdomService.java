@@ -40,7 +40,21 @@ public class KingdomService {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
-    public Kingdom addKingdom(Kingdom category) {
+    public Kingdom addKingdom(Kingdom kingdom) {
+        if (isUnique(kingdom.getName())) {
+            return kingdomRepository.save(kingdom);
+        }
+        throw new ResponseStatusException(HttpStatus.CONFLICT);
+    }
+
+    private boolean isUnique(String name) {
+        List<Kingdom> kingdoms = kingdomRepository.findAll();
+        for (Kingdom kingdom : kingdoms) {
+            if (kingdom.getName().equals(name)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public void deleteKingdom(int id) {

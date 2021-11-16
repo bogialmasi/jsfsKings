@@ -1,10 +1,17 @@
 package hu.kiralyok.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.OneToMany;
 import java.util.List;
 
 public class Kingdom {
+    private String name;
     private int area;
     private int population;
+    @OneToMany(mappedBy = "kingdom")
+    @JsonIgnore
+    private List<King> kings;
 
     public Kingdom(){
     }
@@ -25,6 +32,14 @@ public class Kingdom {
         this.population = population;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setKings(List<King> kings) {
+        this.kings = kings;
+    }
+
     @Override
     public String toString() {
         return "Kingdom{" +
@@ -34,5 +49,10 @@ public class Kingdom {
     }
 
     public List<King> getKings() {
+        return kings;
+    }
+
+    public String getName() {
+        return name;
     }
 }

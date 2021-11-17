@@ -20,7 +20,7 @@ public class KingService {
         return repository.findAll();
     }
 
-    public King getKingById(long id) {
+    public King getKingById(int id) {
         Optional<King> king = repository.findById(id);
         if (king.isPresent()) {
             return king.get();
@@ -50,7 +50,7 @@ public class KingService {
     /*---------------------------------------------------------------------------*/
 
 
-    public void killKing(long id) {
+    public void killKing(int id) {
         Optional<King> king = repository.findById(id);
         if (king.isPresent()) {
             repository.deleteById(id);
@@ -61,7 +61,7 @@ public class KingService {
 
     /*---------------------------------------------------------------------------*/
 
-    public King replaceKing(long id, King king) {
+    public King replaceKing(int id, King king) {
         System.out.println(king);
         Optional<King> optionalKing = repository.findById(id);
         System.out.println(optionalKing.get());
@@ -73,7 +73,7 @@ public class KingService {
     }
     /*---------------------------------------------------------------------------*/
 
-    public void updateKing(long id, int death) {
+    public void updateKing(int id, int death) {
         Optional<King> optionalCategory = repository.findById(id);
         if (optionalCategory.isPresent()) {
             King king = optionalCategory.get();

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface KingdomRepository extends JpaRepository<Kingdom, Long> {
+public interface KingdomRepository extends JpaRepository<Kingdom, Integer> {
     public List<Kingdom> findAllByOrderByName();
 
 }

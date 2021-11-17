@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +23,7 @@ public class KingdomService {
         return kingdomRepository.findAllByOrderByName();
     }
 
-    public Kingdom getKingdomById(long id) {
+    public Kingdom getKingdomById(int id) {
         Optional<Kingdom> kingdom = kingdomRepository.findById(id);
         if (kingdom.isPresent()) {
             return kingdom.get();
@@ -32,7 +31,7 @@ public class KingdomService {
         throw new ResponseStatusException(HttpStatus.NOT_FOUND);
     }
 
-    public List<King> getKingsByKingdom(long id) {
+    public List<King> getKingsByKingdom(int id) {
         Optional<Kingdom> kingdom = kingdomRepository.findById(id);
         if (kingdom.isPresent()) {
             return kingdom.get().getKings();
@@ -57,7 +56,7 @@ public class KingdomService {
         return true;
     }
 
-    public void deleteKingdom(long id) {
+    public void deleteKingdom(int id) {
         Optional<Kingdom> category = kingdomRepository.findById(id);
         if (category.isPresent()) {
             kingdomRepository.deleteById(id);
@@ -66,7 +65,7 @@ public class KingdomService {
         }
     }
 
-    public void updateKingdom(long id, int area, int population) {
+    public void updateKingdom(int id, int area, int population) {
         Optional<Kingdom> optionalKingdom = kingdomRepository.findById(id);
         if (optionalKingdom.isPresent()) {
             Kingdom kingdom = optionalKingdom.get();

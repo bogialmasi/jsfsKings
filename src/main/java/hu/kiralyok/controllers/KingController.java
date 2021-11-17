@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@RestController
 public class KingController {
 
     private KingService service;
@@ -39,7 +40,7 @@ public class KingController {
 
 
     @PutMapping("/kings/{id}")
-    public King replaceKing(@PathVariable("id") long id, @RequestBody King king){
+    public King replaceKing(@PathVariable("id") int id, @RequestBody King king){
         return service.replaceKing(id, king);
     }
 

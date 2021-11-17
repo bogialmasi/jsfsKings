@@ -9,6 +9,7 @@ import java.util.List;
 public class Kingdom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String name;
     private int area;
     private int population;
@@ -17,6 +18,14 @@ public class Kingdom {
     private List<King> kings;
 
     public Kingdom(){
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getArea() {

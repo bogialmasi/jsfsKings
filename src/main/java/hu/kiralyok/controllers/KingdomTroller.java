@@ -38,8 +38,8 @@ public class KingdomTroller {
 
     @PostMapping("/kingdoms")
     @ResponseStatus(HttpStatus.CREATED)
-    public Kingdom addKingdom(@RequestBody Kingdom category) {
-        return service.addKingdom(category);
+    public Kingdom addKingdom(@RequestBody Kingdom kingdom) {
+        return service.addKingdom(kingdom);
     }
 
     /*---------------------------------------------------------------------------*/
@@ -53,7 +53,7 @@ public class KingdomTroller {
     /*---------------------------------------------------------------------------*/
 
     @PatchMapping("/kingdoms/{id}/{area}/{population}")
-    public void updatKingdom(@PathVariable("id") int id, @PathVariable("area") int area, @PathVariable("population") int population){
+    public void updateKingdom(@PathVariable("id") int id, @PathVariable("area") int area, @PathVariable("population") int population){
         service.updateKingdom(id, area, population);
     }
 }

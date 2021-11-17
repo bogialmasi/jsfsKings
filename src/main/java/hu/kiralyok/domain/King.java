@@ -22,7 +22,7 @@ public class King {
                 "name='" + name + '\'' +
                 ", birthDate=" + birthdate +
                 ", death=" + death +
-                ", country=" + kingdom +
+                ", kingdom=" + kingdom +
                 '}';
     }
 
@@ -39,8 +39,8 @@ public class King {
     }
 
     public Kingdom getKingdom() {
-        return kingdom;
-    }
+        return kingdom;}
+
 
     public void setKingdom(Kingdom kingdom) {
         this.kingdom = kingdom;
@@ -66,13 +66,6 @@ public class King {
         this.death = death;
     }
 
-    public Kingdom getCountry() {
-        return kingdom;
-    }
-
-    public void setCountry(Kingdom kingdom) {
-        this.kingdom = kingdom;
-    }
 
     public void setId(long id) {
     }
